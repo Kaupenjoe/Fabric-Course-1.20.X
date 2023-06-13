@@ -3,5 +3,6 @@
   "item.mccourse.raw_pink_garnet": "Raw Pink Garnet",
 
   "block.mccourse.pink_garnet_block": "Block of Pink Garnet",
-  "block.mccourse.raw_pink_garnet_block": "Block of Raw Pink Garnet"
+  "block.mccourse.raw_pink_garnet_block": "Block of Raw Pink Garnet",
+  "itemgroup.pink_garnet_group": "Pink Garnet Course Group"
 }
