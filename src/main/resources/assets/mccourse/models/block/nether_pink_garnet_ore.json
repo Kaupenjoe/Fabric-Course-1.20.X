@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mccourse:block/nether_pink_garnet_ore"
+  }
+}

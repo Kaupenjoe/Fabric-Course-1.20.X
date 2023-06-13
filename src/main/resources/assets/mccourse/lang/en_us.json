@@ -4,5 +4,11 @@
 
   "block.mccourse.pink_garnet_block": "Block of Pink Garnet",
   "block.mccourse.raw_pink_garnet_block": "Block of Raw Pink Garnet",
+
+  "block.mccourse.pink_garnet_ore": "Pink Garnet Ore",
+  "block.mccourse.deepslate_pink_garnet_ore": "Deepslate Pink Garnet Ore",
+  "block.mccourse.nether_pink_garnet_ore": "Nether Pink Garnet Ore",
+  "block.mccourse.end_stone_pink_garnet_ore": "End Stone Pink Garnet Ore",
+
   "itemgroup.pink_garnet_group": "Pink Garnet Course Group"
 }

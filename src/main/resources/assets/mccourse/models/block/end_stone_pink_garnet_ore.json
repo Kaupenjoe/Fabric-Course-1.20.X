@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mccourse:block/end_stone_pink_garnet_ore"
+  }
+}
