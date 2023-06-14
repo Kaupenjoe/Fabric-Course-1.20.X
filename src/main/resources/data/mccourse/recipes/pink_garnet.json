@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mccourse:pink_garnet_block"
+    }
+  ],
+  "result": {
+    "item": "mccourse:pink_garnet",
+    "count": 9
+  }
+}
