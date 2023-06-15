@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.custom.MetalDetectorItem;
+import net.kaupenjoe.mccourse.item.custom.PaxelItem;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -35,6 +36,9 @@ public class ModItems {
             new AxeItem(ModToolMaterial.PINK_GARNET, 6, -2f, new FabricItemSettings()));
     public static final Item PINK_GARNET_HOE = registerItem("pink_garnet_hoe",
             new HoeItem(ModToolMaterial.PINK_GARNET, 0, 0f, new FabricItemSettings()));
+
+    public static final Item PINK_GARNET_PAXEL = registerItem("pink_garnet_paxel",
+            new PaxelItem(ModToolMaterial.PINK_GARNET, 0, 0f, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);
