@@ -27,6 +27,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         pinkGarnetTexturePool.stairs(ModBlocks.PINK_GARNET_STAIRS);
         pinkGarnetTexturePool.slab(ModBlocks.PINK_GARNET_SLAB);
+        pinkGarnetTexturePool.button(ModBlocks.PINK_GARNET_BUTTON);
+        pinkGarnetTexturePool.pressurePlate(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
 
 
     }

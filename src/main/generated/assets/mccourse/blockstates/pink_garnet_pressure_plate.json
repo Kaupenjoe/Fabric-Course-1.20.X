@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "mccourse:block/pink_garnet_pressure_plate"
+    },
+    "powered=true": {
+      "model": "mccourse:block/pink_garnet_pressure_plate_down"
+    }
+  }
+}
