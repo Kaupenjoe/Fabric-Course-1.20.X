@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "mccourse:block/pink_garnet_door_bottom",
+    "top": "mccourse:block/pink_garnet_door_top"
+  }
+}

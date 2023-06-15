@@ -12,6 +12,8 @@
     "mccourse:pink_garnet_pressure_plate",
     "mccourse:pink_garnet_fence",
     "mccourse:pink_garnet_fence_gate",
-    "mccourse:pink_garnet_wall"
+    "mccourse:pink_garnet_wall",
+    "mccourse:pink_garnet_door",
+    "mccourse:pink_garnet_trapdoor"
   ]
 }

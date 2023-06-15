@@ -33,6 +33,8 @@ public class ModModelProvider extends FabricModelProvider {
         pinkGarnetTexturePool.fenceGate(ModBlocks.PINK_GARNET_FENCE_GATE);
         pinkGarnetTexturePool.wall(ModBlocks.PINK_GARNET_WALL);
 
+        blockStateModelGenerator.registerDoor(ModBlocks.PINK_GARNET_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.PINK_GARNET_TRAPDOOR);
 
     }
 
