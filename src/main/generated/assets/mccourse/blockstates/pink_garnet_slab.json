@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mccourse:block/pink_garnet_slab"
+    },
+    "type=double": {
+      "model": "mccourse:block/pink_garnet_block"
+    },
+    "type=top": {
+      "model": "mccourse:block/pink_garnet_slab_top"
+    }
+  }
+}

@@ -31,6 +31,9 @@ public class ModItemGroup {
 
                        entries.add(ModBlocks.SOUND_BLOCK);
 
+                       entries.add(ModBlocks.PINK_GARNET_STAIRS);
+                       entries.add(ModBlocks.PINK_GARNET_SLAB);
+
                     }).build());
 
     public static void registerItemGroups() {

@@ -1,4 +1,6 @@
-// 1.20.1	2023-06-15T10:54:24.7350702	MC Course Mod/Block Loot Tables
+// 1.20.1	2023-06-15T11:27:23.226892	MC Course Mod/Block Loot Tables
+d9244855f90021e3a7f7197892650c544fe7c846 data\mccourse\loot_tables\blocks\pink_garnet_slab.json
+7843a3c48f30392d6956f1b77aa59b291d769731 data\mccourse\loot_tables\blocks\pink_garnet_stairs.json
 2219c9e49518a68a9fe84c708a5afa3676cbf982 data\mccourse\loot_tables\blocks\sound_block.json
 bd432dfab5ccc71fe8ff914648033c4ea86a1576 data\mccourse\loot_tables\blocks\pink_garnet_block.json
 142ad9fe4ed1e88947043cb7c17f77494b2f2a27 data\mccourse\loot_tables\blocks\nether_pink_garnet_ore.json
