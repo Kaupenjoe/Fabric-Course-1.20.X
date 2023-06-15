@@ -11,6 +11,8 @@
   "block.mccourse.nether_pink_garnet_ore": "Nether Pink Garnet Ore",
   "block.mccourse.end_stone_pink_garnet_ore": "End Stone Pink Garnet Ore",
 
+  "block.mccourse.sound_block": "Sound Block",
+
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
 
   "itemgroup.pink_garnet_group": "Pink Garnet Course Group"
