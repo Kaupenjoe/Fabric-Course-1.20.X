@@ -17,5 +17,9 @@
 
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
 
-  "itemgroup.pink_garnet_group": "Pink Garnet Course Group"
+  "itemgroup.pink_garnet_group": "Pink Garnet Course Group",
+
+  "tooltip.mccourse.metal_detector.tooltip.shift": "Right Click on Blocks to find Valuables!",
+  "tooltip.mccourse.metal_detector.tooltip": "Press §eSHIFT§r for more Information",
+  "tooltip.mccourse.sound_block": "Plays a nice sound when Walking on, or being Right-Clicked"
 }
