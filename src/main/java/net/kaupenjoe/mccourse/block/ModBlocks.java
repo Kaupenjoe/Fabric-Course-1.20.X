@@ -40,6 +40,12 @@ public class ModBlocks {
     public static final Block PINK_GARNET_PRESSURE_PLATE = registerBlock("pink_garnet_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.IRON));
 
+    public static final Block PINK_GARNET_FENCE = registerBlock("pink_garnet_fence",
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block PINK_GARNET_FENCE_GATE = registerBlock("pink_garnet_fence_gate",
+            new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK), WoodType.ACACIA));
+    public static final Block PINK_GARNET_WALL = registerBlock("pink_garnet_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

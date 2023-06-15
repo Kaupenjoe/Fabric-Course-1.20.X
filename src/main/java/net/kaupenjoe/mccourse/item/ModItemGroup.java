@@ -36,6 +36,9 @@ public class ModItemGroup {
 
                        entries.add(ModBlocks.PINK_GARNET_BUTTON);
                        entries.add(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
+                       entries.add(ModBlocks.PINK_GARNET_FENCE);
+                       entries.add(ModBlocks.PINK_GARNET_FENCE_GATE);
+                       entries.add(ModBlocks.PINK_GARNET_WALL);
 
                     }).build());
 
