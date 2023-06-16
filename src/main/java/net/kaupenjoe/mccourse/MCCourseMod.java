@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse;
 import net.fabricmc.api.ModInitializer;
 
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.enchantment.ModEnchantments;
 import net.kaupenjoe.mccourse.item.ModItemGroup;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.util.ModRegistries;
@@ -21,6 +22,7 @@ public class MCCourseMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModRegistries.registerModStuffs();
+		ModEnchantments.registerModEnchantments();
 
 	}
 }
