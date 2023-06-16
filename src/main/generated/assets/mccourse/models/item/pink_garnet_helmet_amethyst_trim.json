@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mccourse:item/pink_garnet_helmet",
+    "layer1": "minecraft:trims/items/helmet_trim_amethyst"
+  }
+}
