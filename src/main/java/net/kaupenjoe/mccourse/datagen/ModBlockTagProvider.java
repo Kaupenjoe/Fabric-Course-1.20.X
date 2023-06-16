@@ -18,7 +18,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModTags.Blocks.METAL_DETECTOR_DETECTABLE_BLOCKS)
                 .add(ModBlocks.PINK_GARNET_ORE)
-                .forceAddTag(BlockTags.STONE_ORE_REPLACEABLES);
+                .forceAddTag(BlockTags.GOLD_ORES)
+                .forceAddTag(BlockTags.COAL_ORES)
+                .forceAddTag(BlockTags.COPPER_ORES)
+                .forceAddTag(BlockTags.DIAMOND_ORES)
+                .forceAddTag(BlockTags.IRON_ORES)
+                .forceAddTag(BlockTags.LAPIS_ORES)
+                .forceAddTag(BlockTags.REDSTONE_ORES)
+                .forceAddTag(BlockTags.EMERALD_ORES);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.PINK_GARNET_ORE,
