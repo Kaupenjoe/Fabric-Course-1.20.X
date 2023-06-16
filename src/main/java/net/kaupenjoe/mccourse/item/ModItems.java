@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.custom.MetalDetectorItem;
+import net.kaupenjoe.mccourse.item.custom.ModPoisonSwordItem;
 import net.kaupenjoe.mccourse.item.custom.PaxelItem;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -27,7 +28,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item PINK_GARNET_SWORD = registerItem("pink_garnet_sword",
-            new SwordItem(ModToolMaterial.PINK_GARNET, 2, 2f, new FabricItemSettings()));
+            new ModPoisonSwordItem(ModToolMaterial.PINK_GARNET, 2, 2f, new FabricItemSettings()));
     public static final Item PINK_GARNET_PICKAXE = registerItem("pink_garnet_pickaxe",
             new PickaxeItem(ModToolMaterial.PINK_GARNET, 1, 1f, new FabricItemSettings()));
     public static final Item PINK_GARNET_SHOVEL = registerItem("pink_garnet_shovel",
