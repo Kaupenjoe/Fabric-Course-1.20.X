@@ -57,6 +57,8 @@ public class ModItemGroup {
                        entries.add(ModBlocks.PINK_GARNET_DOOR);
                        entries.add(ModBlocks.PINK_GARNET_TRAPDOOR);
 
+                       entries.add(ModBlocks.PINK_GARNET_LAMP_BLOCK);
+
                     }).build());
 
     public static void registerItemGroups() {
