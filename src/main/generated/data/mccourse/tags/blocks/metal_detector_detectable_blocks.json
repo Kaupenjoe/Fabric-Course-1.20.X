@@ -2,6 +2,13 @@
   "replace": false,
   "values": [
     "mccourse:pink_garnet_ore",
-    "#minecraft:stone_ore_replaceables"
+    "#minecraft:gold_ores",
+    "#minecraft:coal_ores",
+    "#minecraft:copper_ores",
+    "#minecraft:diamond_ores",
+    "#minecraft:iron_ores",
+    "#minecraft:lapis_ores",
+    "#minecraft:redstone_ores",
+    "#minecraft:emerald_ores"
   ]
 }

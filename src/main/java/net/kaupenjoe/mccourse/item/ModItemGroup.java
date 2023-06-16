@@ -34,6 +34,7 @@ public class ModItemGroup {
                        entries.add(ModItems.PINK_GARNET_BOOTS);
 
                        entries.add(ModItems.PINK_GARNET_HORSE_ARMOR);
+                       entries.add(ModItems.DATA_TABLET);
 
 
                        entries.add(ModBlocks.PINK_GARNET_BLOCK);

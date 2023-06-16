@@ -1,5 +1,7 @@
 package net.kaupenjoe.mccourse.item.custom;
 
+import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.util.InventoryUtil;
 import net.kaupenjoe.mccourse.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -38,6 +41,10 @@ public class MetalDetectorItem extends Item {
                     outputValuableCoordinates(positionClicked.down(i), player, block);
                     foundBlock = true;
 
+                    if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET)) {
+                        addNbtDataToDataTablet(player, positionClicked.down(i), block);
+                    }
+
                     break;
                 }
             }
@@ -51,6 +58,16 @@ public class MetalDetectorItem extends Item {
                 playerEntity -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
 
         return ActionResult.SUCCESS;
+    }
+
+    private void addNbtDataToDataTablet(PlayerEntity player, BlockPos position, Block block) {
+        ItemStack dataTabletStack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET));
+
+        NbtCompound nbtData = new NbtCompound();
+        nbtData.putString("mccourse.last_valuable_found", "Valuable Found: " + block.getName().getString() + " at " +
+                "(" + position.getX() + ", " + position.getY() + ", " + position.getZ() + ")");
+
+        dataTabletStack.setNbt(nbtData);
     }
 
     @Override
