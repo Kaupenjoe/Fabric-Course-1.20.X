@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
 import net.kaupenjoe.mccourse.block.custom.PinkGarnetLampBlock;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.minecraft.block.Blocks;
@@ -40,6 +41,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PINK_GARNET_TRAPDOOR);
 
         registerCustomLamp(blockStateModelGenerator);
+
+        blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
     }
 
     private void registerCustomLamp(BlockStateModelGenerator blockStateModelGenerator) {
