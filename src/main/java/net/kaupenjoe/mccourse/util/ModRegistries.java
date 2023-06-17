@@ -1,9 +1,13 @@
 package net.kaupenjoe.mccourse.util;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.kaupenjoe.mccourse.command.ReturnHomeCommand;
 import net.kaupenjoe.mccourse.command.SetHomeCommand;
+import net.kaupenjoe.mccourse.event.AttackEntityHandler;
+import net.kaupenjoe.mccourse.event.PlayerCopyHandler;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.minecraft.block.ComposterBlock;
 
@@ -12,6 +16,7 @@ public class ModRegistries {
         registerFuels();
         registerModCompostables();
         registerCommands();
+        registerEvents();
     }
 
     private static void registerFuels() {
@@ -28,5 +33,10 @@ public class ModRegistries {
     private static void registerCommands() {
         CommandRegistrationCallback.EVENT.register(SetHomeCommand::register);
         CommandRegistrationCallback.EVENT.register(ReturnHomeCommand::register);
+    }
+
+    private static void registerEvents() {
+        AttackEntityCallback.EVENT.register(new AttackEntityHandler());
+        ServerPlayerEvents.COPY_FROM.register(new PlayerCopyHandler());
     }
 }
