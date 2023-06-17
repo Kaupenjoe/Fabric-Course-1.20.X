@@ -63,5 +63,12 @@
   "tooltip.mccourse.metal_detector.tooltip": "Press §eSHIFT§r for more Information",
   "tooltip.mccourse.sound_block": "Plays a nice sound when Walking on, or being Right-Clicked",
 
-  "sounds.mccourse.metal_detector_found_ore": "Metal Detector Found an Ore"
+  "sounds.mccourse.metal_detector_found_ore": "Metal Detector Found an Ore",
+
+  "painting.mccourse.world.title": "World",
+  "painting.mccourse.world.author": "NanoAttack",
+  "painting.mccourse.shrimp.title": "Shrimp",
+  "painting.mccourse.shrimp.author": "NanoAttack",
+  "painting.mccourse.saw_them.title": "Saw Them",
+  "painting.mccourse.saw_them.author": "NanoAttack"
 }
