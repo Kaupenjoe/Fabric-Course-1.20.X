@@ -39,6 +39,7 @@ public class ModItemGroup {
                        entries.add(ModItems.BAR_BRAWL_MUSIC_DISC);
                        entries.add(ModItems.RADIATION_STAFF);
                        entries.add(ModItems.PINK_GARNET_BOW);
+                       entries.add(ModItems.PINK_GARNET_SHIELD);
 
 
                        entries.add(ModBlocks.PINK_GARNET_BLOCK);
