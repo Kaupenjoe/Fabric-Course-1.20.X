@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
+import net.kaupenjoe.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.kaupenjoe.mccourse.block.custom.PinkGarnetLampBlock;
 import net.kaupenjoe.mccourse.block.custom.SoundBlock;
 import net.kaupenjoe.mccourse.sound.ModSounds;
@@ -72,6 +73,8 @@ public class ModBlocks {
     public static final Block POTTED_PETUNIA = registerBlockWithoutBlockItem("potted_petunia",
             new FlowerPotBlock(PETUNIA, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
 
+    public static final Block GEM_EMPOWERING_STATION = registerBlock("gem_empowering_station",
+            new GemEmpoweringStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);
