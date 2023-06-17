@@ -1,0 +1,8 @@
+{
+  "metal_detector_found_ore": {
+    "subtitle": "sounds.mccourse.metal_detector_found_ore",
+    "sounds": [
+      "mccourse:metal_detector_found_ore"
+    ]
+  }
+}
