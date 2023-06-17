@@ -16,6 +16,8 @@ public class ModSounds {
     public static final SoundEvent PINK_GARNET_LAMP_HIT = registerSoundEvent("pink_garnet_lamp_hit");
     public static final SoundEvent PINK_GARNET_LAMP_FALL = registerSoundEvent("pink_garnet_lamp_fall");
 
+    public static final SoundEvent BAR_BRAWL = registerSoundEvent("bar_brawl");
+
 
     public static final BlockSoundGroup PINK_GARNET_LAMP_SOUNDS = new BlockSoundGroup(1f, 1f,
             PINK_GARNET_LAMP_BREAK, PINK_GARNET_LAMP_STEP, PINK_GARNET_LAMP_PLACE, PINK_GARNET_LAMP_HIT, PINK_GARNET_LAMP_FALL);

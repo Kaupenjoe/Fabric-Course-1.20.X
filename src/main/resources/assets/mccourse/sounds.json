@@ -34,5 +34,13 @@
     "sounds": [
       "mccourse:pink_garnet_lamp_fall"
     ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "mccourse:bar_brawl",
+        "stream": true
+      }
+    ]
   }
 }

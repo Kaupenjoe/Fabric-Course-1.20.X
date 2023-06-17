@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mccourse:item/bar_brawl_music_disc"
+  }
+}
