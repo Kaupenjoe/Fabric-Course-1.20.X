@@ -64,6 +64,9 @@ public class ModItems {
     public static final Item RADIATION_STAFF = registerItem("radiation_staff",
             new Item(new FabricItemSettings()));
 
+    public static final Item PINK_GARNET_BOW = registerItem("pink_garnet_bow",
+            new BowItem(new FabricItemSettings().maxDamage(500)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);
     }

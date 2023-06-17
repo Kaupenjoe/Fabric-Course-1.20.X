@@ -1,0 +1,6 @@
+{
+    "parent": "mccourse:item/pink_garnet_bow",
+    "textures": {
+        "layer0": "mccourse:item/pink_garnet_bow_pulling_1"
+    }
+}
