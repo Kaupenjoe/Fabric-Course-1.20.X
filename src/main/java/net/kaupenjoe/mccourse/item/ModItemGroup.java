@@ -37,6 +37,7 @@ public class ModItemGroup {
                        entries.add(ModItems.DATA_TABLET);
                        entries.add(ModItems.CAULIFLOWER_SEEDS);
                        entries.add(ModItems.BAR_BRAWL_MUSIC_DISC);
+                       entries.add(ModItems.RADIATION_STAFF);
 
 
                        entries.add(ModBlocks.PINK_GARNET_BLOCK);

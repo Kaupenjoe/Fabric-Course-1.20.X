@@ -61,6 +61,9 @@ public class ModItems {
     public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
             new MusicDiscItem(9, ModSounds.BAR_BRAWL, new FabricItemSettings().maxCount(1), 122));
 
+    public static final Item RADIATION_STAFF = registerItem("radiation_staff",
+            new Item(new FabricItemSettings()));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);
     }
