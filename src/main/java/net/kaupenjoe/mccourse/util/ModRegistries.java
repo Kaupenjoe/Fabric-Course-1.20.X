@@ -9,7 +9,10 @@ import net.kaupenjoe.mccourse.command.SetHomeCommand;
 import net.kaupenjoe.mccourse.event.AttackEntityHandler;
 import net.kaupenjoe.mccourse.event.PlayerCopyHandler;
 import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.mixin.BrewingRecipeRegistryMixin;
+import net.kaupenjoe.mccourse.potion.ModPotions;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.potion.Potions;
 
 public class ModRegistries {
     public static void registerModStuffs() {
@@ -17,6 +20,7 @@ public class ModRegistries {
         registerModCompostables();
         registerCommands();
         registerEvents();
+        registerPotionRecipes();
     }
 
     private static void registerFuels() {
@@ -38,5 +42,9 @@ public class ModRegistries {
     private static void registerEvents() {
         AttackEntityCallback.EVENT.register(new AttackEntityHandler());
         ServerPlayerEvents.COPY_FROM.register(new PlayerCopyHandler());
+    }
+
+    private static void registerPotionRecipes() {
+        BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, ModItems.PINK_GARNET, ModPotions.SLIMEY_POTION);
     }
 }

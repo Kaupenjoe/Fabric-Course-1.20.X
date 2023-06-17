@@ -5,7 +5,8 @@
 	"mixins": [
 		"ExampleMixin",
 		"ModEntityDataSaverMixin",
-		"PlayerEntityMixin"
+		"PlayerEntityMixin",
+		"BrewingRecipeRegistryMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
