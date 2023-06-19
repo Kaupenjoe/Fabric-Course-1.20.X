@@ -1,0 +1,40 @@
+{
+  "parent": "mccourse:mccourse",
+  "criteria": {
+    "has_used_metal_detector": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mccourse:metal_detector"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "mccourse:block/pink_garnet_ore",
+    "description": {
+      "text": "Batteries not included! (Actually doesn't need batteries)"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mccourse:metal_detector",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Metal Detector"
+    }
+  },
+  "requirements": [
+    [
+      "has_used_metal_detector"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

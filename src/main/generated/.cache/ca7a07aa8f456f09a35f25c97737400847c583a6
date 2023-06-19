@@ -1,4 +1,4 @@
-// 1.20.1	2023-06-17T14:09:39.2014626	MC Course Mod/Model Definitions
+// 1.20.1	2023-06-19T08:48:08.8264286	MC Course Mod/Model Definitions
 346c3e61370efd5027d32d16a0c624382ded8b0a assets\mccourse\blockstates\pink_garnet_stairs.json
 7b13ef541d4bd5eb68126881a96dda566d505cce assets\mccourse\models\item\pink_garnet_boots_iron_trim.json
 7d430ebd5e0a3a1e2d12a9dcb173d08795b2b509 assets\mccourse\models\block\pink_garnet_lamp_block.json
@@ -121,8 +121,8 @@ c73632bb6497fef1edf9a4449102fd7e810ae3dc assets\mccourse\blockstates\pink_garnet
 a90d995e4268516359efc932a8d15d9ca59c1018 assets\mccourse\models\item\nether_pink_garnet_ore.json
 9638169d87f42172d7d257a64965fe65d374eb80 assets\mccourse\models\item\pink_garnet_leggings_gold_trim.json
 fd0dabf5e0f69ab29c6b1ae6394f200dc402f81e assets\mccourse\models\item\pink_garnet_fence_gate.json
-067a649ae3ea3b01e98d9b466fd13b18e0d671b4 assets\mccourse\blockstates\pink_garnet_door.json
 fc40fa2e09cc1a21358cd6f620a0c1a5d95cf00a assets\mccourse\blockstates\pink_garnet_wall.json
+067a649ae3ea3b01e98d9b466fd13b18e0d671b4 assets\mccourse\blockstates\pink_garnet_door.json
 e49d8caeea0eaa2372e92b6b10e31026f58eff9a assets\mccourse\models\item\pink_garnet_chestplate_gold_trim.json
 1dad798f06050d9284deca4dcb1017c9367b48e3 assets\mccourse\models\item\pink_garnet_helmet.json
 34569c44d2144218a1e46f370e6f7cd1f811c656 assets\mccourse\models\item\petunia.json

@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "has_pink_garnet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mccourse:pink_garnet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "mccourse:textures/block/pink_garnet_ore.png",
+    "description": {
+      "text": "The Power lies in the Pink Garnet!"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mccourse:pink_garnet"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "MC Course"
+    }
+  },
+  "requirements": [
+    [
+      "has_pink_garnet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
