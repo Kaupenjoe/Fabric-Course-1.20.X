@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.util;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.kaupenjoe.mccourse.command.ReturnHomeCommand;
 import net.kaupenjoe.mccourse.command.SetHomeCommand;
@@ -12,7 +13,11 @@ import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.mixin.BrewingRecipeRegistryMixin;
 import net.kaupenjoe.mccourse.potion.ModPotions;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.VillagerProfession;
 
 public class ModRegistries {
     public static void registerModStuffs() {
@@ -21,6 +26,7 @@ public class ModRegistries {
         registerCommands();
         registerEvents();
         registerPotionRecipes();
+        registerCustomTrades();
     }
 
     private static void registerFuels() {
@@ -46,5 +52,23 @@ public class ModRegistries {
 
     private static void registerPotionRecipes() {
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, ModItems.PINK_GARNET, ModPotions.SLIMEY_POTION);
+    }
+
+    private static void registerCustomTrades() {
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                       new ItemStack(Items.EMERALD, 2),
+                       new ItemStack(ModItems.CAULIFLOWER, 2), 6, 2, 0.02f
+                    ));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 3,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                       new ItemStack(Items.EMERALD, 16),
+                       new ItemStack(ModItems.PINK_GARNET_PAXEL, 1), 2, 6, 0.08f
+                    ));
+                });
     }
 }
