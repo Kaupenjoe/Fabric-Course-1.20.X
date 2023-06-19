@@ -12,6 +12,7 @@ import net.kaupenjoe.mccourse.event.PlayerCopyHandler;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.mixin.BrewingRecipeRegistryMixin;
 import net.kaupenjoe.mccourse.potion.ModPotions;
+import net.kaupenjoe.mccourse.villager.ModVillagers;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -68,6 +69,22 @@ public class ModRegistries {
                     factories.add((entity, random) -> new TradeOffer(
                        new ItemStack(Items.EMERALD, 16),
                        new ItemStack(ModItems.PINK_GARNET_PAXEL, 1), 2, 6, 0.08f
+                    ));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.SOUND_MASTER, 1,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                       new ItemStack(Items.EMERALD, 4),
+                       new ItemStack(ModItems.RADIATION_STAFF, 1), 6, 19, 0.08f
+                    ));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.SOUND_MASTER, 2,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                       new ItemStack(Items.EMERALD, 16),
+                       new ItemStack(ModItems.METAL_DETECTOR, 1), 1, 5, 0.08f
                     ));
                 });
     }

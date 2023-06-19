@@ -13,6 +13,7 @@ import net.kaupenjoe.mccourse.potion.ModPotions;
 import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.kaupenjoe.mccourse.util.ModLootTableModifiers;
 import net.kaupenjoe.mccourse.util.ModRegistries;
+import net.kaupenjoe.mccourse.villager.ModVillagers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,5 +39,7 @@ public class MCCourseMod implements ModInitializer {
 
 		ModPotions.registerPotions();
 		ModParticles.registerParticles();
+
+		ModVillagers.registerVillagers();
 	}
 }
