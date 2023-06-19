@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -40,6 +41,8 @@ public class ModItemGroup {
                        entries.add(ModItems.RADIATION_STAFF);
                        entries.add(ModItems.PINK_GARNET_BOW);
                        entries.add(ModItems.PINK_GARNET_SHIELD);
+
+                       entries.add(ModFluids.SOAP_WATER_BUCKET);
 
 
                        entries.add(ModBlocks.PINK_GARNET_BLOCK);

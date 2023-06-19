@@ -1,4 +1,4 @@
-// 1.20.1	2023-06-19T11:19:33.8714135	MC Course Mod/Tags for minecraft:block
+// 1.20.1	2023-06-19T13:01:31.3955143	MC Course Mod/Tags for minecraft:block
 ac7381ec75628ff455e4e862ac61c12577e71c8f data\fabric\tags\blocks\needs_tool_level_4.json
 7c66f3ac9539ccdf96f17f829af9f7abefa67cbf data\minecraft\tags\blocks\mineable\pickaxe.json
 78b821323f95d2a39da78c8e495f9ea41951b6f0 data\mccourse\tags\blocks\metal_detector_detectable_blocks.json
