@@ -80,5 +80,8 @@
 
   "entity.minecraft.villager.soundmaster": "Soundmaster",
 
-  "effect.mccourse.slimey": "Slimey"
+  "effect.mccourse.slimey": "Slimey",
+
+  "mccourse.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "mccourse.tooltip.liquid.amount": "%s mB"
 }
