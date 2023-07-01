@@ -1,0 +1,12 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "mccourse:raw_pink_garnet"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "mccourse:pink_garnet"
+  }
+}

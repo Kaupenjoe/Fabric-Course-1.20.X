@@ -1,0 +1,12 @@
+{
+  "type": "mccourse:gem_empowering",
+  "ingredients": [
+    {
+      "item": "minecraft:prismarine"
+    }
+  ],
+  "output": {
+    "count": 12,
+    "item": "minecraft:cooked_chicken"
+  }
+}
