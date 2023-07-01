@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.block.entity;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.fabricmc.tinyremapper.OutputConsumerPath;
 import net.kaupenjoe.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -16,6 +17,9 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -25,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 import java.util.Optional;
 
@@ -66,6 +71,14 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
             }
         };
     }
+
+    public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(64000, 200, 200) {
+        @Override
+        protected void onFinalCommit() {
+            markDirty();
+            getWorld().updateListeners(pos, getCachedState(), getCachedState(), 3);
+        }
+    };
 
     @Override
     public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
@@ -151,18 +164,23 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("gem_empowering_station.progress", progress);
+        nbt.putLong(("gem_empowering_station.energy"), energyStorage.amount);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("gem_empowering_station.progress");
+        energyStorage.amount = nbt.getLong("gem_empowering_station.energy");
         super.readNbt(nbt);
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
+        fillUpOnEnergy(); // until we have machines/other mods that give us Energy
+
         if(canInsertIntoOutputSlot() && hasRecipe()) {
             increaseCraftingProgress();
+            extractEnergy();
             markDirty(world, pos, state);
 
             if(hasCraftingFinished()) {
@@ -172,6 +190,26 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         } else {
             resetProgress();
         }
+    }
+
+    private void extractEnergy() {
+        try(Transaction transaction = Transaction.openOuter()) {
+            this.energyStorage.extract(32L, transaction);
+            transaction.commit();
+        }
+    }
+
+    private void fillUpOnEnergy() {
+        if(hasEnergyItemInEnergySlot(ENERGY_ITEM_SLOT)) {
+            try(Transaction transaction = Transaction.openOuter()) {
+                this.energyStorage.insert(64, transaction);
+                transaction.commit();
+            }
+        }
+    }
+
+    private boolean hasEnergyItemInEnergySlot(int energyItemSlot) {
+        return this.getStack(energyItemSlot).getItem() == ModItems.CAULIFLOWER;
     }
 
     private void craftItem() {
@@ -204,7 +242,11 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         ItemStack output = recipe.get().getOutput(null);
 
         return canInsertAmountIntoOutputSlot(output.getCount())
-                && canInsertItemIntoOutputSlot(output);
+                && canInsertItemIntoOutputSlot(output) && hasEnoughEnergyToCraft();
+    }
+
+    private boolean hasEnoughEnergyToCraft() {
+        return this.energyStorage.amount >= 32L * this.maxProgress;
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
@@ -227,5 +269,16 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     private boolean canInsertIntoOutputSlot() {
         return this.getStack(OUTPUT_SLOT).isEmpty() ||
                 this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
     }
 }
