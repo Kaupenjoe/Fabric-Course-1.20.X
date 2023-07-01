@@ -1,5 +1,8 @@
 package net.kaupenjoe.mccourse.block.entity;
 
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
@@ -8,6 +11,7 @@ import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.fabricmc.tinyremapper.OutputConsumerPath;
 import net.kaupenjoe.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.networking.ModMessages;
 import net.kaupenjoe.mccourse.recipe.GemEmpoweringRecipe;
 import net.kaupenjoe.mccourse.screen.GemEmpoweringScreenHandler;
 import net.minecraft.block.BlockState;
@@ -28,6 +32,7 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -75,6 +80,38 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
                 return 2;
             }
         };
+    }
+
+    public ItemStack getRenderStack() {
+        if(this.getStack(OUTPUT_SLOT).isEmpty()) {
+            return this.getStack(INPUT_SLOT);
+        } else {
+            return this.getStack(OUTPUT_SLOT);
+        }
+    }
+
+    @Override
+    public void markDirty() {
+        if(!world.isClient()) {
+            PacketByteBuf data = PacketByteBufs.create();
+            data.writeInt(inventory.size());
+            for(int i = 0; i < inventory.size(); i++) {
+                data.writeItemStack(inventory.get(i));
+            }
+            data.writeBlockPos(getPos());
+
+            for(ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
+                ServerPlayNetworking.send(player, ModMessages.ITEM_SYNC, data);
+            }
+        }
+
+        super.markDirty();
+    }
+
+    public void setInventory(DefaultedList<ItemStack> list) {
+        for(int i = 0; i < list.size(); i++) {
+            this.inventory.set(i, list.get(i));
+        }
     }
 
     public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(64000, 200, 200) {
@@ -341,4 +378,5 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     public NbtCompound toInitialChunkDataNbt() {
         return createNbt();
     }
+
 }
