@@ -3,13 +3,13 @@ package net.kaupenjoe.mccourse.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.kaupenjoe.mccourse.MCCourseMod;
-import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
-import net.kaupenjoe.mccourse.block.custom.GemEmpoweringStationBlock;
-import net.kaupenjoe.mccourse.block.custom.PinkGarnetLampBlock;
-import net.kaupenjoe.mccourse.block.custom.SoundBlock;
+import net.kaupenjoe.mccourse.block.custom.*;
 import net.kaupenjoe.mccourse.sound.ModSounds;
+import net.kaupenjoe.mccourse.util.ModWoodTypes;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
+import net.minecraft.data.family.BlockFamilies;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -93,7 +93,14 @@ public class ModBlocks {
     public static final Block DRIFTWOOD_SAPLING = registerBlock("driftwood_sapling",
             new SaplingBlock(null, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING).strength(1f)));
 
-
+    public static final Block DRIFTWOOD_SIGN = registerBlockWithoutBlockItem("driftwood_sign",
+            new ModStandingSignBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_SIGN), ModWoodTypes.DRIFTWOOD));
+    public static final Block DRIFTWOOD_WALL_SIGN = registerBlockWithoutBlockItem("driftwood_wall_sign",
+            new ModWallSignBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_WALL_SIGN), ModWoodTypes.DRIFTWOOD));
+    public static final Block DRIFTWOOD_HANGING_SIGN = registerBlockWithoutBlockItem("driftwood_hanging_sign",
+            new ModHangingSignBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_HANGING_SIGN), ModWoodTypes.DRIFTWOOD));
+    public static final Block DRIFTWOOD_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("driftwood_hanging_wall_sign",
+            new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_WALL_HANGING_SIGN), ModWoodTypes.DRIFTWOOD));
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);

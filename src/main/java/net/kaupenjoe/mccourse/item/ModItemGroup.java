@@ -42,6 +42,9 @@ public class ModItemGroup {
                        entries.add(ModItems.PINK_GARNET_BOW);
                        entries.add(ModItems.PINK_GARNET_SHIELD);
 
+                       entries.add(ModItems.DRIFTWOOD_SIGN);
+                       entries.add(ModItems.DRIFTWOOD_HANGING_SIGN);
+
                        entries.add(ModFluids.SOAP_WATER_BUCKET);
 
 

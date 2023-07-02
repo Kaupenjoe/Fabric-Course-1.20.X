@@ -66,6 +66,9 @@
   "block.mccourse.driftwood_leaves": "Driftwood Leaves",
   "block.mccourse.driftwood_sapling": "Driftwood Sapling",
 
+  "block.mccourse.driftwood_sign": "Driftwood Sign",
+  "block.mccourse.driftwood_hanging_sign": "Driftwood Hanging Sign",
+
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
 
   "itemgroup.pink_garnet_group": "Pink Garnet Course Group",

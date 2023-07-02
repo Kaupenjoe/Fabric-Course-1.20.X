@@ -70,6 +70,12 @@ public class ModItems {
     public static final Item PINK_GARNET_SHIELD = registerItem("pink_garnet_shield",
             new ShieldItem(new FabricItemSettings().maxDamage(500)));
 
+
+    public static final Item DRIFTWOOD_SIGN = registerItem("driftwood_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.DRIFTWOOD_SIGN, ModBlocks.DRIFTWOOD_WALL_SIGN));
+    public static final Item DRIFTWOOD_HANGING_SIGN = registerItem("driftwood_hanging_sign",
+            new HangingSignItem(ModBlocks.DRIFTWOOD_HANGING_SIGN, ModBlocks.DRIFTWOOD_HANGING_WALL_SIGN, new FabricItemSettings().maxCount(16)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);
     }
