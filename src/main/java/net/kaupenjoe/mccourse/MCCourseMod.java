@@ -18,6 +18,7 @@ import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.kaupenjoe.mccourse.util.ModLootTableModifiers;
 import net.kaupenjoe.mccourse.util.ModRegistries;
 import net.kaupenjoe.mccourse.villager.ModVillagers;
+import net.kaupenjoe.mccourse.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,5 +52,6 @@ public class MCCourseMod implements ModInitializer {
 		ModScreenHandlers.registerScreenHandler();
 
 		ModRecipes.registerRecipes();
+		ModWorldGeneration.generateModWorldGeneration();
 	}
 }
