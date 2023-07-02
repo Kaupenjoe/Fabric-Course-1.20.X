@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.util;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -10,6 +11,8 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.command.ReturnHomeCommand;
 import net.kaupenjoe.mccourse.command.SetHomeCommand;
+import net.kaupenjoe.mccourse.entity.ModEntities;
+import net.kaupenjoe.mccourse.entity.custom.PorcupineEntity;
 import net.kaupenjoe.mccourse.event.AttackEntityHandler;
 import net.kaupenjoe.mccourse.event.PlayerCopyHandler;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -33,12 +36,17 @@ public class ModRegistries {
         registerCustomTrades();
         registerStrippables();
         registerFlammables();
+        registerAttributes();
     }
 
     private static void registerFuels() {
         FuelRegistry registry = FuelRegistry.INSTANCE;
 
         registry.add(ModItems.PEAT_BRICK, 200);
+    }
+
+    private static void registerAttributes() {
+        FabricDefaultAttributeRegistry.register(ModEntities.PORCUPINE, PorcupineEntity.createPorcupineAttributes());
     }
 
     private static void registerModCompostables() {
