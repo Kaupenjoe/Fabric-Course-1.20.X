@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.block.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.minecraft.block.entity.BlockEntityType;
@@ -19,5 +20,6 @@ public class ModBlockEntities {
         MCCourseMod.LOGGER.info("Registering Block Entities for " + MCCourseMod.MOD_ID);
 
         EnergyStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.energyStorage, GEM_EMPOWERING_STATION_BE);
+        FluidStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.fluidStorage, GEM_EMPOWERING_STATION_BE);
     }
 }
