@@ -70,6 +70,14 @@ public class ModItemGroup {
                        entries.add(ModBlocks.PETUNIA);
                        entries.add(ModBlocks.GEM_EMPOWERING_STATION);
 
+                       entries.add(ModBlocks.DRIFTWOOD_LOG);
+                       entries.add(ModBlocks.DRIFTWOOD_WOOD);
+                       entries.add(ModBlocks.STRIPPED_DRIFTWOOD_LOG);
+                       entries.add(ModBlocks.STRIPPED_DRIFTWOOD_WOOD);
+                       entries.add(ModBlocks.DRIFTWOOD_PLANKS);
+                       entries.add(ModBlocks.DRIFTWOOD_SAPLING);
+                       entries.add(ModBlocks.DRIFTWOOD_LEAVES);
+
                     }).build());
 
     public static void registerItemGroups() {

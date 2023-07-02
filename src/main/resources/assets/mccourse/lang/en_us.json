@@ -58,6 +58,13 @@
   "block.mccourse.petunia": "Petunia",
   "block.mccourse.gem_empowering_station": "Gem Empowering Station",
 
+  "block.mccourse.driftwood_log": "Driftwood Log",
+  "block.mccourse.driftwood_wood": "Driftwood Wood",
+  "block.mccourse.stripped_driftwood_log": "Stripped Driftwood Log",
+  "block.mccourse.stripped_driftwood_wood": "Stripped Driftwood Wood",
+  "block.mccourse.driftwood_planks": "Driftwood Planks",
+  "block.mccourse.driftwood_leaves": "Driftwood Leaves",
+  "block.mccourse.driftwood_sapling": "Driftwood Sapling",
 
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
 

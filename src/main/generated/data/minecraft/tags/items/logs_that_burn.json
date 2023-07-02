@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mccourse:driftwood_log",
+    "mccourse:driftwood_wood",
+    "mccourse:stripped_driftwood_log",
+    "mccourse:stripped_driftwood_wood"
+  ]
+}

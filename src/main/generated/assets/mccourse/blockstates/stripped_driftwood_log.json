@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "mccourse:block/stripped_driftwood_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "mccourse:block/stripped_driftwood_log"
+    },
+    "axis=z": {
+      "model": "mccourse:block/stripped_driftwood_log_horizontal",
+      "x": 90
+    }
+  }
+}

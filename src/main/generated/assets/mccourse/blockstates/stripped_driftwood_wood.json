@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "mccourse:block/stripped_driftwood_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "mccourse:block/stripped_driftwood_wood"
+    },
+    "axis=z": {
+      "model": "mccourse:block/stripped_driftwood_wood",
+      "x": 90
+    }
+  }
+}
