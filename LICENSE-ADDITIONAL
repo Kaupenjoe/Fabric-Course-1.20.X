@@ -1,1 +1,16 @@
-Nothing Yet!
+Climbing Effect by SameDifferent: https://github.com/samedifferent/TrickOrTreat/blob/master/LICENSE
+
+REI Implementation done with the help of Galacticraft:
+https://github.com/TeamGalacticraft/Galacticraft/tree/main (MIT License)
+
+EnergyInfoArea by BluSunrize from ImmersiveEngineering (Forge Version)
+https://github.com/BluSunrize/ImmersiveEngineering/blob/1.19.2/src/main/java/blusunrize/immersiveengineering/client/gui/info/EnergyInfoArea.java
+Distributed under Blu's License of Common Sense: https://github.com/BluSunrize/ImmersiveEngineering/blob/1.19.2/LICENSE
+
+Most of FluidTankRenderer by mezz from https://github.com/mezz/JustEnoughItems (Forge Version)
+Distributed under MIT-License: https://github.com/mezz/JustEnoughItems/blob/1.19/LICENSE.txt
+HIGHLY EDITED VERSION FOR FABRIC by Kaupenjoe
+Includes major rewrites and methods from:
+https://github.com/mezz/JustEnoughItems/blob/1.19/Forge/src/main/java/mezz/jei/forge/platform/FluidHelper.java
+Also includes drawFluid method from TechReborn: https://github.com/TechReborn/TechReborn
+UNDER MIT LICENSE: https://github.com/TechReborn/TechReborn/blob/1.19/LICENSE.md
