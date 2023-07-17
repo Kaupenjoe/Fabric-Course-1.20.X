@@ -175,6 +175,7 @@ public class PorcupineEntity extends TameableEntity {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
         this.setSitting(nbt.getBoolean("Sitting"));
+        this.setInSittingPose(nbt.getBoolean("Sitting"));
     }
 
     @Override
