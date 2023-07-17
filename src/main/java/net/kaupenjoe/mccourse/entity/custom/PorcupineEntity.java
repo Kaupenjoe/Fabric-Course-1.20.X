@@ -151,6 +151,18 @@ public class PorcupineEntity extends AnimalEntity {
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putInt("Variant", this.getTypeVariant());
+    }
+
     /* SOUNDS */
 
     @Nullable
