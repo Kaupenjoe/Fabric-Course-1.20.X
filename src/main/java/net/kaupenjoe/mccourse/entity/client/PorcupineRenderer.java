@@ -6,11 +6,12 @@ import net.kaupenjoe.mccourse.entity.layer.ModModelLayers;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
+import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class PorcupineRenderer extends LivingEntityRenderer<PorcupineEntity, PorcupineModel<PorcupineEntity>> {
+public class PorcupineRenderer extends MobEntityRenderer<PorcupineEntity, PorcupineModel<PorcupineEntity>> {
     private static final Identifier TEXTURE = new Identifier(MCCourseMod.MOD_ID, "textures/entity/porcupine.png");
 
     public PorcupineRenderer(EntityRendererFactory.Context ctx) {
