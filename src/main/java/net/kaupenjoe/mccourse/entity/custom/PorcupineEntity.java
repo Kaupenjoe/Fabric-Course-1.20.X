@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.entity.custom;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.entity.ai.PorcupineAttackGoal;
 import net.kaupenjoe.mccourse.entity.variant.PorcupineVariant;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -13,6 +14,7 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandler;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.passive.AbstractHorseEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
@@ -25,15 +27,20 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Arm;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class PorcupineEntity extends TameableEntity {
+public class PorcupineEntity extends TameableEntity implements Mount {
     private static final TrackedData<Boolean> ATTACKING =
             DataTracker.registerData(PorcupineEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
@@ -175,6 +182,7 @@ public class PorcupineEntity extends TameableEntity {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
         this.setSitting(nbt.getBoolean("Sitting"));
+        this.setInSittingPose(nbt.getBoolean("Sitting"));
     }
 
     @Override
@@ -232,10 +240,14 @@ public class PorcupineEntity extends TameableEntity {
             }
         }
 
-        if(isTamed() && hand == Hand.MAIN_HAND) {
-            boolean sitting = !isSitting();
-            setSitting(sitting);
-            setInSittingPose(sitting);
+        if(isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming) {
+            if(!player.isSneaking()) {
+                setRiding(player);
+            } else {
+                boolean sitting = !isSitting();
+                setSitting(sitting);
+                setInSittingPose(sitting);
+            }
 
             return ActionResult.SUCCESS;
         }
@@ -246,5 +258,76 @@ public class PorcupineEntity extends TameableEntity {
     @Override
     public EntityView method_48926() {
         return this.getWorld();
+    }
+
+    /* RIDEABLE */
+
+    @Nullable
+    @Override
+    public LivingEntity getControllingPassenger() {
+        return (LivingEntity) this.getFirstPassenger();
+    }
+
+    private void setRiding(PlayerEntity pPlayer) {
+        this.setInSittingPose(false);
+
+        pPlayer.setYaw(this.getYaw());
+        pPlayer.setPitch(this.getPitch());
+        pPlayer.startRiding(this);
+    }
+
+    @Override
+    public void travel(Vec3d movementInput) {
+        if(this.hasPassengers() && getControllingPassenger() instanceof PlayerEntity) {
+            LivingEntity livingentity = this.getControllingPassenger();
+            this.setYaw(livingentity.getYaw());
+            this.prevYaw = this.getYaw();
+            this.setPitch(livingentity.getPitch() * 0.5F);
+            this.setRotation(this.getYaw(), this.getPitch());
+            this.bodyYaw = this.getYaw();
+            this.headYaw = this.bodyYaw;
+            float f = livingentity.sidewaysSpeed * 0.5F;
+            float f1 = livingentity.forwardSpeed;
+            if (f1 <= 0.0F) {
+                f1 *= 0.25F;
+            }
+
+            if (this.isLogicalSideForUpdatingMovement()) {
+                float newSpeed = (float)this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+
+                if(MinecraftClient.getInstance().options.sprintKey.isPressed()) {
+                    newSpeed *= 2; // Change this to ~1.5 or so
+                }
+
+                this.setMovementSpeed(newSpeed);
+                super.travel(new Vec3d(f, movementInput.y, f1));
+            }
+        } else {
+            super.travel(movementInput);
+        }
+    }
+
+    @Override
+    public Vec3d updatePassengerForDismount(LivingEntity passenger) {
+        Direction direction = this.getMovementDirection();
+        if (direction.getAxis() == Direction.Axis.Y) {
+            return super.updatePassengerForDismount(passenger);
+        }
+        int[][] is = Dismounting.getDismountOffsets(direction);
+        BlockPos blockPos = this.getBlockPos();
+        BlockPos.Mutable mutable = new BlockPos.Mutable();
+        for (EntityPose entityPose : passenger.getPoses()) {
+            Box box = passenger.getBoundingBox(entityPose);
+            for (int[] js : is) {
+                mutable.set(blockPos.getX() + js[0], blockPos.getY(), blockPos.getZ() + js[1]);
+                double d = this.getWorld().getDismountHeight(mutable);
+                if (!Dismounting.canDismountInBlock(d)) continue;
+                Vec3d vec3d = Vec3d.ofCenter(mutable, d);
+                if (!Dismounting.canPlaceEntityAt(this.getWorld(), passenger, box.offset(vec3d))) continue;
+                passenger.setPose(entityPose);
+                return vec3d;
+            }
+        }
+        return super.updatePassengerForDismount(passenger);
     }
 }
