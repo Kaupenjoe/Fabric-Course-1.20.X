@@ -181,15 +181,12 @@ public class PorcupineEntity extends TameableEntity implements Mount {
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
-        this.setSitting(nbt.getBoolean("Sitting"));
-        this.setInSittingPose(nbt.getBoolean("Sitting"));
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putInt("Variant", this.getTypeVariant());
-        nbt.putBoolean("Sitting", this.isSitting());
     }
 
     /* SOUNDS */
