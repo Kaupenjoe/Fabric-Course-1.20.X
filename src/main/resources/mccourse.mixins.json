@@ -6,7 +6,8 @@
 		"ExampleMixin",
 		"ModEntityDataSaverMixin",
 		"PlayerEntityMixin",
-		"BrewingRecipeRegistryMixin"
+		"BrewingRecipeRegistryMixin",
+		"TrunkPlacerTypeInvoker"
 	],
 	"client": [
 		"ItemRendererAccessor",

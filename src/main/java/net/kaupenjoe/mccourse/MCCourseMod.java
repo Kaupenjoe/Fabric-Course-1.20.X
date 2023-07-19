@@ -20,6 +20,7 @@ import net.kaupenjoe.mccourse.util.ModLootTableModifiers;
 import net.kaupenjoe.mccourse.util.ModRegistries;
 import net.kaupenjoe.mccourse.villager.ModVillagers;
 import net.kaupenjoe.mccourse.world.gen.ModWorldGeneration;
+import net.kaupenjoe.mccourse.world.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,5 +57,7 @@ public class MCCourseMod implements ModInitializer {
 		ModWorldGeneration.generateModWorldGeneration();
 
 		ModEntities.registerModEntities();
+		ModTrunkPlacerTypes.register();
+
 	}
 }
