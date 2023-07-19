@@ -46,6 +46,8 @@ public class ModItemGroup {
                        entries.add(ModItems.DRIFTWOOD_HANGING_SIGN);
                        entries.add(ModItems.PORCUPINE_SPAWN_EGG);
 
+                       entries.add(ModItems.DICE);
+
                        entries.add(ModFluids.SOAP_WATER_BUCKET);
 
 

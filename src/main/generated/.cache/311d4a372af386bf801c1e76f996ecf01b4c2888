@@ -1,11 +1,11 @@
-// 1.20.1	2023-07-02T19:54:34.2293083	MC Course Mod/World Gen
+// 1.20.1	2023-07-19T12:07:22.3814972	MC Course Mod/World Gen
 3c6c98f21f7a17b5efd0fe58a9a45841eb5099fc data\mccourse\worldgen\placed_feature\driftwood_placed.json
 d51069845f87c984c4e2ba6f3f221f7e148f0bc9 data\mccourse\worldgen\placed_feature\pink_garnet_ore_placed.json
-cf1c6886435d5f38cc8627d7985897bf11579619 data\mccourse\worldgen\configured_feature\petunia.json
 9f0b2894c593de0dee236b84306943e093a48518 data\mccourse\worldgen\configured_feature\pink_garnet_ore.json
+cf1c6886435d5f38cc8627d7985897bf11579619 data\mccourse\worldgen\configured_feature\petunia.json
 372c66bf59d0cdb003f110b5c591d9d48ba25063 data\mccourse\worldgen\configured_feature\nether_pink_garnet_ore.json
 ed906736c582ac3a89a4b61c1cec18b08089a351 data\mccourse\worldgen\configured_feature\driftwood.json
-8e9e878c65e8277862dbf56ee91878ed915b5b4c data\mccourse\worldgen\placed_feature\nether_pink_garnet_ore_placed.json
 edf63ec47e1820a25bfb98a8de1686c9e4a95994 data\mccourse\worldgen\placed_feature\petunia_placed.json
+8e9e878c65e8277862dbf56ee91878ed915b5b4c data\mccourse\worldgen\placed_feature\nether_pink_garnet_ore_placed.json
 14ea559d5179e55924b2726362de2e177b9664b8 data\mccourse\worldgen\placed_feature\end_pink_garnet_ore_placed.json
 1a3bf47422a88a99214f18adf2207fa06606f8f2 data\mccourse\worldgen\configured_feature\end_pink_garnet_ore.json

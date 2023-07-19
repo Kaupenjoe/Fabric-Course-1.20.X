@@ -103,6 +103,12 @@ public class ModBlocks {
     public static final Block DRIFTWOOD_HANGING_WALL_SIGN = registerBlockWithoutBlockItem("driftwood_hanging_wall_sign",
             new ModWallHangingSignBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_WALL_HANGING_SIGN), ModWoodTypes.DRIFTWOOD));
 
+    public static final Block DICE_BLOCK = registerBlockWithoutBlockItem("dice_block",
+            new DiceBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+
+
+
+
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);
     }

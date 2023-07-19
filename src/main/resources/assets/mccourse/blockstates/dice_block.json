@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "number=up": {
+      "model": "mccourse:block/dice_1"
+    },
+    "number=north": {
+      "model": "mccourse:block/dice_2"
+    },
+    "number=east": {
+      "model": "mccourse:block/dice_3"
+    },
+    "number=south": {
+      "model": "mccourse:block/dice_5"
+    },
+    "number=west": {
+      "model": "mccourse:block/dice_4"
+    },
+    "number=down": {
+      "model": "mccourse:block/dice_6"
+    }
+  }
+}
