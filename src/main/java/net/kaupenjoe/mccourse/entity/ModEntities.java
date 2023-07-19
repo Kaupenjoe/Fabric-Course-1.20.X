@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.entity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.entity.custom.DiceProjectileEntity;
+import net.kaupenjoe.mccourse.entity.custom.MagicProjectileEntity;
 import net.kaupenjoe.mccourse.entity.custom.PorcupineEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -21,8 +22,13 @@ public class ModEntities {
 
     public static final EntityType<DiceProjectileEntity> THROWN_DICE_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MCCourseMod.MOD_ID, "dice_projectile"),
-            FabricEntityTypeBuilder.<DiceProjectileEntity>create(SpawnGroup.CREATURE, DiceProjectileEntity::new)
+            FabricEntityTypeBuilder.<DiceProjectileEntity>create(SpawnGroup.MISC, DiceProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).build());
+
+    public static final EntityType<MagicProjectileEntity> MAGIC_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MCCourseMod.MOD_ID, "magic_projectile"),
+            FabricEntityTypeBuilder.<MagicProjectileEntity>create(SpawnGroup.MISC, MagicProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
 
 
 
