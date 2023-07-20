@@ -17,6 +17,10 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url "https://maven.shedaniel.me" }
+	maven {
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/'
+	}
 }
 
 loom {
@@ -59,6 +63,9 @@ dependencies {
 	include modApi('teamreborn:energy:3.0.0') {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
+
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

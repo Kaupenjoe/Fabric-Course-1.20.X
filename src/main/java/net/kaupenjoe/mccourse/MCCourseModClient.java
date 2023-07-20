@@ -1,5 +1,6 @@
 package net.kaupenjoe.mccourse;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
@@ -11,6 +12,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
 import net.kaupenjoe.mccourse.block.entity.renderer.GemEmpoweringBlockEntityRenderer;
+import net.kaupenjoe.mccourse.entity.ModBoats;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.entity.client.MagicProjectileModel;
 import net.kaupenjoe.mccourse.entity.client.MagicProjectileRenderer;
@@ -74,7 +76,7 @@ public class MCCourseModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.THROWN_DICE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.MAGIC_PROJECTILE, MagicProjectileRenderer::new);
 
-
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.DRIFTWOOD_BOAT_ID, false);
 
     }
 }

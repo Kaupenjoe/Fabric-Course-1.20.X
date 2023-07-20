@@ -6,6 +6,7 @@ import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
 import net.kaupenjoe.mccourse.effect.ModEffects;
 import net.kaupenjoe.mccourse.enchantment.ModEnchantments;
+import net.kaupenjoe.mccourse.entity.ModBoats;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.item.ModItemGroup;
@@ -61,6 +62,7 @@ public class MCCourseMod implements ModInitializer {
 		ModTrunkPlacerTypes.register();
 
 		ModFoliagePlacerTypes.register();
+		ModBoats.registerBoats();
 
 	}
 }

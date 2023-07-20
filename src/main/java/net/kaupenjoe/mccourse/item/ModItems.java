@@ -1,10 +1,12 @@
 package net.kaupenjoe.mccourse.item;
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.entity.ModBoats;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.item.custom.*;
 import net.kaupenjoe.mccourse.sound.ModSounds;
@@ -83,6 +85,10 @@ public class ModItems {
 
     public static final Item DICE = registerItem("dice",
             new DiceItem(new FabricItemSettings()));
+
+    public static final Item DRIFTWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, false);
+    public static final Item DRIFTWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_CHEST_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, true);
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);
