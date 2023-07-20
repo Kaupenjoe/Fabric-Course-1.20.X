@@ -1,10 +1,11 @@
-// 1.20.1	2023-07-20T10:11:33.7050264	MC Course Mod/Block Loot Tables
+// 1.20.1	2023-07-20T10:45:12.172422	MC Course Mod/Block Loot Tables
 47ee319ad974c837baf12dcfa08bf8be1e0ae2b9 data\mccourse\loot_tables\blocks\pink_garnet_fence.json
 1596b2f7b9139ee7f423899999a5483e62b88058 data\mccourse\loot_tables\blocks\cauliflower_crop.json
 db9b7ba7f4993f58e55b0b14b7b14e325f03d137 data\mccourse\loot_tables\blocks\pink_garnet_button.json
 358a7e975221d81d8106d2c79d09223f40f75a4d data\mccourse\loot_tables\blocks\end_stone_pink_garnet_ore.json
 889a5ee84c3e26c153eba897206947c442c99a0a data\mccourse\loot_tables\blocks\pink_garnet_ore.json
 f9f13e2916b1fe6cedca6e3009a0ff9ba6427262 data\mccourse\loot_tables\blocks\deepslate_pink_garnet_ore.json
+b8cdd15d403a1820499590999f323f3e67eb9269 data\mccourse\loot_tables\blocks\cattail_crop.json
 d9244855f90021e3a7f7197892650c544fe7c846 data\mccourse\loot_tables\blocks\pink_garnet_slab.json
 7843a3c48f30392d6956f1b77aa59b291d769731 data\mccourse\loot_tables\blocks\pink_garnet_stairs.json
 2219c9e49518a68a9fe84c708a5afa3676cbf982 data\mccourse\loot_tables\blocks\sound_block.json

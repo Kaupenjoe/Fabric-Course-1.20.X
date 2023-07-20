@@ -107,6 +107,8 @@ public class ModBlocks {
             new DiceBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
 
 
+    public static final Block CATTAIL_CROP = registerBlockWithoutBlockItem("cattail_crop",
+            new CattailCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {

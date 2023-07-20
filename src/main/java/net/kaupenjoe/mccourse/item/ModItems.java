@@ -89,6 +89,11 @@ public class ModItems {
     public static final Item DRIFTWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, false);
     public static final Item DRIFTWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.DRIFTWOOD_CHEST_BOAT_ID, ModBoats.DRIFTWOOD_BOAT_KEY, true);
 
+    public static final Item CATTAIL_SEEDS = registerItem("cattail_seeds",
+            new AliasedBlockItem(ModBlocks.CATTAIL_CROP, new FabricItemSettings()));
+    public static final Item CATTAIL = registerItem("cattail",
+            new Item(new FabricItemSettings()));
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);

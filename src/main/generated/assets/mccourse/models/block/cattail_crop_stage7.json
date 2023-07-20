@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "mccourse:block/cattail_crop_stage7"
+  }
+}
