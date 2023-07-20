@@ -22,6 +22,8 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> PETUNIA_PLACED_KEY = registerKey("petunia_placed");
 
+    public static final RegistryKey<PlacedFeature> PINK_GARNET_GEODE_PLACED_KEY = registerKey("pink_garnet_geode_placed");
+
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
@@ -42,6 +44,9 @@ public class ModPlacedFeatures {
         register(context, PETUNIA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PETUNIA_KEY),
                 RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
+        register(context, PINK_GARNET_GEODE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINK_GARNET_GEODE_KEY),
+                RarityFilterPlacementModifier.of(42), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.fixed(6),
+                        YOffset.fixed(40)), BiomePlacementModifier.of());
     }
 
 

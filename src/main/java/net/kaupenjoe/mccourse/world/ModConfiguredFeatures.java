@@ -14,6 +14,7 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
@@ -30,6 +31,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> END_PINK_GARNET_ORE_KEY = registerKey("end_pink_garnet_ore");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> PETUNIA_KEY = registerKey("petunia");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PINK_GARNET_GEODE_KEY = registerKey("pink_garnet_geode");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -61,6 +64,20 @@ public class ModConfiguredFeatures {
 
         register(context, PETUNIA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PETUNIA)))));
+
+        register(context, PINK_GARNET_GEODE_KEY, Feature.GEODE, new GeodeFeatureConfig(new GeodeLayerConfig(BlockStateProvider.of(Blocks.AIR),
+                BlockStateProvider.of(Blocks.DEEPSLATE),
+                BlockStateProvider.of(ModBlocks.PINK_GARNET_ORE),
+                BlockStateProvider.of(Blocks.DIRT),
+                BlockStateProvider.of(Blocks.EMERALD_BLOCK),
+                List.of(ModBlocks.PINK_GARNET_BLOCK.getDefaultState()),
+                BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+                new GeodeLayerThicknessConfig(1.7D, 1.2D, 2.5D, 3.5D),
+                new GeodeCrackConfig(0.25D, 1.5D, 1),
+                0.5D, 0.1D,
+                true, UniformIntProvider.create(3, 8),
+                UniformIntProvider.create(2, 6), UniformIntProvider.create(1, 2),
+                -18, 18, 0.075D, 1));
     }
 
 
