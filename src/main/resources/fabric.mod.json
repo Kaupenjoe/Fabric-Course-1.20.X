@@ -26,6 +26,9 @@
 		],
 		"rei_client": [
 			"net.kaupenjoe.mccourse.compat.MCCourseModREIClientPlugin"
+		],
+		"terrablender": [
+			"net.kaupenjoe.mccourse.world.biome.ModTerraBlenderAPI"
 		]
 	},
 	"mixins": [

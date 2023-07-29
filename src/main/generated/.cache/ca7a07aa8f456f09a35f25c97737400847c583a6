@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-20T11:02:29.1637443	MC Course Mod/Model Definitions
+// 1.20.1	2023-07-29T14:59:31.7435845	MC Course Mod/Model Definitions
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\mccourse\models\item\porcupine_spawn_egg.json
 346c3e61370efd5027d32d16a0c624382ded8b0a assets\mccourse\blockstates\pink_garnet_stairs.json
 7b13ef541d4bd5eb68126881a96dda566d505cce assets\mccourse\models\item\pink_garnet_boots_iron_trim.json
@@ -113,8 +113,8 @@ e88f7f6c72562f35b934d11c7666a94bf6326dd4 assets\mccourse\models\item\pink_garnet
 15600b867b88c2fc4672823632f08f38f55c02a1 assets\mccourse\blockstates\driftwood_wall_sign.json
 25cfcc752d08ce037eacbf7493c4c2ca020d1ebd assets\mccourse\models\item\pink_garnet_axe.json
 44b23f8c9d64a2ac593a3d73b8e79b09ab8eb037 assets\mccourse\models\item\pink_garnet_hoe.json
-dcaf26ba6015ed1debc4e6d8baa75705341a6fc4 assets\mccourse\models\item\driftwood_boat.json
 5c9bd8479827f76d62931596c42292eb1c1f0ac3 assets\mccourse\models\block\pink_garnet_door_bottom_left.json
+dcaf26ba6015ed1debc4e6d8baa75705341a6fc4 assets\mccourse\models\item\driftwood_boat.json
 14e4dafe5a0b44155a7b28776fcc0a987c6f5577 assets\mccourse\models\block\driftwood_sign.json
 9fc2b1c4972ee878386b7af3f14fbe411677a71b assets\mccourse\models\item\pink_garnet_chestplate_emerald_trim.json
 f909f0e26580940619fb0e69c50d97eb34e42931 assets\mccourse\models\item\pink_garnet_helmet_quartz_trim.json
