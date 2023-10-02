@@ -16,7 +16,7 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    PINK_GARNET("pink_garnet", 25, Util.make(new EnumMap(ArmorItem.Type.class), map -> {
+    PINK_GARNET("pink_garnet", 25, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 6);
         map.put(ArmorItem.Type.CHESTPLATE, 8);
@@ -88,7 +88,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     static {
         CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
-        BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
+        BASE_DURABILITY = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
             map.put(ArmorItem.Type.BOOTS, 13);
             map.put(ArmorItem.Type.LEGGINGS, 15);
             map.put(ArmorItem.Type.CHESTPLATE, 16);
