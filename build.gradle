@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.2-SNAPSHOT'
+	id 'fabric-loom' version '1.4-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -59,20 +59,20 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:12.0.625"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:12.0.625"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:13.0.666"
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:13.0.666"
 
 	include modApi('teamreborn:energy:3.0.0') {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:8.0.0"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:8.0.0"
 
-	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.20.1-3.0.0.169'
+	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.20.2-3.0.0.170'
 
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20'
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.2'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.2'
 
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

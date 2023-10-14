@@ -25,8 +25,8 @@ public class PorcupineAttackGoal extends MeleeAttackGoal {
     }
 
     @Override
-    protected void attack(LivingEntity pEnemy, double pDistToEnemySqr) {
-        if (isEnemyWithinAttackDistance(pEnemy, pDistToEnemySqr)) {
+    protected void attack(LivingEntity pEnemy) {
+        if (isEnemyWithinAttackDistance(pEnemy)) {
             shouldCountTillNextAttack = true;
 
             if(isTimeToStartAttackAnimation()) {
@@ -45,8 +45,8 @@ public class PorcupineAttackGoal extends MeleeAttackGoal {
         }
     }
 
-    private boolean isEnemyWithinAttackDistance(LivingEntity pEnemy, double pDistToEnemySqr) {
-        return pDistToEnemySqr <= this.getSquaredMaxAttackDistance(pEnemy);
+    private boolean isEnemyWithinAttackDistance(LivingEntity pEnemy) {
+        return this.mob.squaredDistanceTo(pEnemy) < 2f;
     }
 
     protected void resetAttackCooldown() {

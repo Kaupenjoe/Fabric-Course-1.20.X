@@ -6,6 +6,7 @@ import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementDisplay;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.item.ItemStack;
@@ -20,8 +21,8 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
     }
 
     @Override
-    public void generateAdvancement(Consumer<Advancement> consumer) {
-        Advancement rootAdvancement = Advancement.Builder.create()
+    public void generateAdvancement(Consumer<AdvancementEntry> consumer) {
+        AdvancementEntry rootAdvancement = Advancement.Builder.create()
                 .display(new AdvancementDisplay(new ItemStack(ModItems.PINK_GARNET),
                         Text.literal("MC Course"), Text.literal("The Power lies in the Pink Garnet!"),
                         new Identifier(MCCourseMod.MOD_ID, "textures/block/pink_garnet_ore.png"), AdvancementFrame.TASK,
@@ -29,7 +30,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("has_pink_garnet", InventoryChangedCriterion.Conditions.items(ModItems.PINK_GARNET))
                 .build(consumer, MCCourseMod.MOD_ID + ":mccourse");
 
-        Advancement metalDetector = Advancement.Builder.create()
+        AdvancementEntry metalDetector = Advancement.Builder.create()
                 .display(new AdvancementDisplay(new ItemStack(ModItems.METAL_DETECTOR),
                         Text.literal("Metal Detector"), Text.literal("Batteries not included! (Actually doesn't need batteries)"),
                         new Identifier(MCCourseMod.MOD_ID, "block/pink_garnet_ore"), AdvancementFrame.TASK,
