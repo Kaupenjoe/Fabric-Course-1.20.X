@@ -80,6 +80,16 @@
 
   "block.mccourse.colored_leaves": "Colored Leaves",
 
+  "block.mccourse.ruby_block": "Block of Ruby",
+  "block.mccourse.ruby_block_1": "Block of Ruby 1",
+  "block.mccourse.ruby_block_2": "Block of Ruby 2",
+  "block.mccourse.ruby_block_3": "Block of Ruby 3",
+
+  "block.mccourse.waxed_ruby_block": "Waxed Block of Ruby",
+  "block.mccourse.waxed_ruby_block_1": "Waxed Block of Ruby 1",
+  "block.mccourse.waxed_ruby_block_2": "Waxed Block of Ruby 2",
+  "block.mccourse.waxed_ruby_block_3": "Waxed Block of Ruby 3",
+
   "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
 
   "itemgroup.pink_garnet_group": "Pink Garnet Course Group",

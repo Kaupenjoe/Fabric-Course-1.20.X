@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.block.ModBlocks;
@@ -41,6 +42,18 @@ public class ModRegistries {
         registerFlammables();
         registerAttributes();
         createPortal();
+        registerOxidizables();
+    }
+
+    private static void registerOxidizables() {
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.RUBY_BLOCK, ModBlocks.RUBY_BLOCK_1);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.RUBY_BLOCK_1, ModBlocks.RUBY_BLOCK_2);
+        OxidizableBlocksRegistry.registerOxidizableBlockPair(ModBlocks.RUBY_BLOCK_2, ModBlocks.RUBY_BLOCK_3);
+
+        OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.RUBY_BLOCK, ModBlocks.WAXED_RUBY_BLOCK);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.RUBY_BLOCK_1, ModBlocks.WAXED_RUBY_BLOCK_1);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.RUBY_BLOCK_2, ModBlocks.WAXED_RUBY_BLOCK_2);
+        OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.RUBY_BLOCK_3, ModBlocks.WAXED_RUBY_BLOCK_3);
     }
 
     private static void createPortal() {

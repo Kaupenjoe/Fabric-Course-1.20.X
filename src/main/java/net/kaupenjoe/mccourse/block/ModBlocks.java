@@ -113,6 +113,24 @@ public class ModBlocks {
     public static final Block COLORED_LEAVES = registerBlock("colored_leaves",
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
 
+    public static final Block RUBY_BLOCK = registerBlock("ruby_block",
+            new OxidizableBlock(Oxidizable.OxidationLevel.UNAFFECTED, FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block RUBY_BLOCK_1 = registerBlock("ruby_block_1",
+            new OxidizableBlock(Oxidizable.OxidationLevel.EXPOSED, FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block RUBY_BLOCK_2 = registerBlock("ruby_block_2",
+            new OxidizableBlock(Oxidizable.OxidationLevel.WEATHERED, FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block RUBY_BLOCK_3 = registerBlock("ruby_block_3",
+            new OxidizableBlock(Oxidizable.OxidationLevel.OXIDIZED, FabricBlockSettings.copyOf(Blocks.STONE)));
+
+    public static final Block WAXED_RUBY_BLOCK = registerBlock("waxed_ruby_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block WAXED_RUBY_BLOCK_1 = registerBlock("waxed_ruby_block_1",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block WAXED_RUBY_BLOCK_2 = registerBlock("waxed_ruby_block_2",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block WAXED_RUBY_BLOCK_3 = registerBlock("waxed_ruby_block_3",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+
 
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(MCCourseMod.MOD_ID, name), block);

@@ -91,6 +91,16 @@ public class ModItemGroup {
 
                        entries.add(ModBlocks.COLORED_LEAVES);
 
+                       entries.add(ModBlocks.RUBY_BLOCK);
+                       entries.add(ModBlocks.RUBY_BLOCK_1);
+                       entries.add(ModBlocks.RUBY_BLOCK_2);
+                       entries.add(ModBlocks.RUBY_BLOCK_3);
+
+                       entries.add(ModBlocks.WAXED_RUBY_BLOCK);
+                       entries.add(ModBlocks.WAXED_RUBY_BLOCK_1);
+                       entries.add(ModBlocks.WAXED_RUBY_BLOCK_2);
+                       entries.add(ModBlocks.WAXED_RUBY_BLOCK_3);
+
 
                     }).build());
 
