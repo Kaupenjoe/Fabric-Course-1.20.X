@@ -55,6 +55,10 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
+    private final int DEFAULT_MAX_PROGRESS = 72;
+
+    private int energyAmount = 25;
+    private final int DEFAULT_ENERGY_AMOUNT = 25;
 
     public GemEmpoweringStationBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GEM_EMPOWERING_STATION_BE, pos, state);
@@ -225,6 +229,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("gem_empowering_station.progress", progress);
+        nbt.putInt("gem_empowering_station.max_progress", maxProgress);
+        nbt.putInt("gem_empowering_station.energy_amount", energyAmount);
         nbt.putLong(("gem_empowering_station.energy"), energyStorage.amount);
         nbt.put("gem_empowering_station.variant", fluidStorage.variant.toNbt());
         nbt.putLong("gem_empowering_station.fluid_amount", fluidStorage.amount);
@@ -234,6 +240,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("gem_empowering_station.progress");
+        maxProgress = nbt.getInt("gem_empowering_station.max_progress");
+        energyAmount = nbt.getInt("gem_empowering_station.energy_amount");
         energyStorage.amount = nbt.getLong("gem_empowering_station.energy");
         fluidStorage.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("gem_empowering_station.variant"));
         fluidStorage.amount = nbt.getLong("gem_empowering_station.fluid_amount");
@@ -288,7 +296,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
 
     private void extractEnergy() {
         try(Transaction transaction = Transaction.openOuter()) {
-            this.energyStorage.extract(32L, transaction);
+            this.energyStorage.extract(energyAmount, transaction);
             transaction.commit();
         }
     }
@@ -317,6 +325,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
 
     private void resetProgress() {
         this.progress = 0;
+        this.maxProgress = DEFAULT_MAX_PROGRESS;
+        this.energyAmount = DEFAULT_ENERGY_AMOUNT;
     }
 
     private boolean hasCraftingFinished() {
@@ -334,6 +344,8 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
             return false;
         }
         ItemStack output = recipe.get().value().getResult(null);
+        this.maxProgress = recipe.get().value().getCraftTime();
+        this.energyAmount = recipe.get().value().getEnergyAmount();
 
         return canInsertAmountIntoOutputSlot(output.getCount())
                 && canInsertItemIntoOutputSlot(output) && hasEnoughEnergyToCraft() && hasEnoughFluidToCraft();
@@ -344,7 +356,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Exte
     }
 
     private boolean hasEnoughEnergyToCraft() {
-        return this.energyStorage.amount >= 32L * this.maxProgress;
+        return this.energyStorage.amount >= this.energyAmount * this.maxProgress;
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

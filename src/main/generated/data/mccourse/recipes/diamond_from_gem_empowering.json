@@ -1,5 +1,7 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 600,
+  "energyAmount": 20,
   "ingredients": [
     {
       "item": "minecraft:coal"

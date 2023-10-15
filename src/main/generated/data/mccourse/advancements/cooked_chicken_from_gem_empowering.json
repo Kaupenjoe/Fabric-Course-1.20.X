@@ -1,5 +1,4 @@
 {
-  "parent": "minecraft:recipes/root",
   "criteria": {
     "has_prismarine": {
       "conditions": {
@@ -12,26 +11,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "minecraft:cooked_chicken"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_prismarine"
-    ],
-    [
-      "has_the_recipe"
     ]
   ],
-  "rewards": {
-    "recipes": [
-      "minecraft:cooked_chicken"
-    ]
-  },
   "sends_telemetry_event": true
 }

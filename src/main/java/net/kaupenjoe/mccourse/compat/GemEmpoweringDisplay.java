@@ -13,12 +13,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class GemEmpoweringDisplay extends BasicDisplay {
+    private RecipeEntry<GemEmpoweringRecipe> recipe;
+
     public GemEmpoweringDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs) {
         super(inputs, outputs);
     }
 
     public GemEmpoweringDisplay(RecipeEntry<GemEmpoweringRecipe> recipe) {
         super(getInputList(recipe.value()), List.of(EntryIngredient.of(EntryStacks.of(recipe.value().getResult(null)))));
+        this.recipe = recipe;
     }
 
     private static List<EntryIngredient> getInputList(GemEmpoweringRecipe recipe) {
@@ -26,6 +29,18 @@ public class GemEmpoweringDisplay extends BasicDisplay {
         List<EntryIngredient> list = new ArrayList<>();
         list.add(EntryIngredients.ofIngredient(recipe.getIngredients().get(0)));
         return list;
+    }
+
+    public int getCraftTime() {
+        return recipe.value().getCraftTime();
+    }
+
+    public int getEnergyAmount() {
+        return recipe.value().getEnergyAmount();
+    }
+
+    public int getTotalEnergyAmount() {
+        return getCraftTime() * getEnergyAmount();
     }
 
     @Override

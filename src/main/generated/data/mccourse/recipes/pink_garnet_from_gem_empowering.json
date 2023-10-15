@@ -1,5 +1,7 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 60,
+  "energyAmount": 15,
   "ingredients": [
     {
       "item": "mccourse:raw_pink_garnet"

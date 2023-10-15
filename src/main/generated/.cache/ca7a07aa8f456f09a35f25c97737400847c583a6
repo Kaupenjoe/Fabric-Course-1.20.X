@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-29T15:24:15.3884782	MC Course Mod/Model Definitions
+// 1.20.2	2023-10-15T14:23:21.5240885	MC Course Mod/Model Definitions
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\mccourse\models\item\porcupine_spawn_egg.json
 346c3e61370efd5027d32d16a0c624382ded8b0a assets\mccourse\blockstates\pink_garnet_stairs.json
 7b13ef541d4bd5eb68126881a96dda566d505cce assets\mccourse\models\item\pink_garnet_boots_iron_trim.json
@@ -94,9 +94,9 @@ a37e016c0383348df7c055222e880cc5bcec3486 assets\mccourse\models\item\pink_garnet
 ab0d01435fa2dd8c7b86f4c91341a94555b94fe8 assets\mccourse\models\block\pink_garnet_door_bottom_right_open.json
 575d063250ab9d2d65012dcf8340a2daa3003530 assets\mccourse\blockstates\driftwood_sapling.json
 d4fec10683a382af96a8b45f15f0414c193fa5da assets\mccourse\models\item\cattail.json
-da1a2d6a2f7b299bcefc89da44a39351bda3ab78 assets\mccourse\models\item\pink_garnet_stairs.json
-aa5208a87763b31a92e55ef5db33a83a0f8166cb assets\mccourse\models\item\pink_garnet_leggings_amethyst_trim.json
 05181b13c44e65c6ef3a58ee991e7edfd3be026a assets\mccourse\models\item\pink_garnet_boots_amethyst_trim.json
+aa5208a87763b31a92e55ef5db33a83a0f8166cb assets\mccourse\models\item\pink_garnet_leggings_amethyst_trim.json
+da1a2d6a2f7b299bcefc89da44a39351bda3ab78 assets\mccourse\models\item\pink_garnet_stairs.json
 5fd4f200b24314a0f7ef80b137eeeb0f3fd9188c assets\mccourse\models\item\pink_garnet_helmet_netherite_trim.json
 0679b99e0133a3f7f0f598449c365dcf9c213700 assets\mccourse\models\block\cattail_crop_stage7.json
 7d430ebd5e0a3a1e2d12a9dcb173d08795b2b509 assets\mccourse\models\block\pink_garnet_lamp_block.json
@@ -113,8 +113,8 @@ e88f7f6c72562f35b934d11c7666a94bf6326dd4 assets\mccourse\models\item\pink_garnet
 15600b867b88c2fc4672823632f08f38f55c02a1 assets\mccourse\blockstates\driftwood_wall_sign.json
 25cfcc752d08ce037eacbf7493c4c2ca020d1ebd assets\mccourse\models\item\pink_garnet_axe.json
 44b23f8c9d64a2ac593a3d73b8e79b09ab8eb037 assets\mccourse\models\item\pink_garnet_hoe.json
-5c9bd8479827f76d62931596c42292eb1c1f0ac3 assets\mccourse\models\block\pink_garnet_door_bottom_left.json
 dcaf26ba6015ed1debc4e6d8baa75705341a6fc4 assets\mccourse\models\item\driftwood_boat.json
+5c9bd8479827f76d62931596c42292eb1c1f0ac3 assets\mccourse\models\block\pink_garnet_door_bottom_left.json
 14e4dafe5a0b44155a7b28776fcc0a987c6f5577 assets\mccourse\models\block\driftwood_sign.json
 9fc2b1c4972ee878386b7af3f14fbe411677a71b assets\mccourse\models\item\pink_garnet_chestplate_emerald_trim.json
 f909f0e26580940619fb0e69c50d97eb34e42931 assets\mccourse\models\item\pink_garnet_helmet_quartz_trim.json

@@ -42,19 +42,19 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 ModBlocks.NETHER_PINK_GARNET_ORE, ModBlocks.END_STONE_PINK_GARNET_ORE), RecipeCategory.MISC, ModItems.PINK_GARNET,
                 0.25f, 200, "pink_garnet");
 
-        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 3)
+        new GemEmpoweringRecipeBuilder(ModItems.RAW_PINK_GARNET, ModItems.PINK_GARNET, 3, 60, 15)
                 .criterion(hasItem(ModItems.RAW_PINK_GARNET), conditionsFromItem(ModItems.RAW_PINK_GARNET))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.STICK, Items.END_ROD, 1)
+        new GemEmpoweringRecipeBuilder(Items.STICK, Items.END_ROD, 1, 10, 50)
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Items.COAL, Items.DIAMOND, 7)
+        new GemEmpoweringRecipeBuilder(Items.COAL, Items.DIAMOND, 7, 600, 20)
                 .criterion(hasItem(Items.COAL), conditionsFromItem(Items.COAL))
                 .offerTo(exporter);
 
-        new GemEmpoweringRecipeBuilder(Blocks.PRISMARINE, Items.COOKED_CHICKEN, 12)
+        new GemEmpoweringRecipeBuilder(Blocks.PRISMARINE, Items.COOKED_CHICKEN, 12, 20, 50)
                 .criterion(hasItem(Blocks.PRISMARINE), conditionsFromItem(Blocks.PRISMARINE))
                 .offerTo(exporter);
     }

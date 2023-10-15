@@ -1,5 +1,7 @@
 {
   "type": "mccourse:gem_empowering",
+  "craftTime": 10,
+  "energyAmount": 50,
   "ingredients": [
     {
       "item": "minecraft:stick"

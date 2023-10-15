@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_stone",
-      "has_pink_garnet",
-      "has_the_recipe"
+      "has_pink_garnet"
     ]
   ],
   "rewards": {
