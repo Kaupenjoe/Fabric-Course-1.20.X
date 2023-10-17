@@ -12,5 +12,10 @@ public class ModRecipes {
         Registry.register(Registries.RECIPE_TYPE, new Identifier(MCCourseMod.MOD_ID, GemEmpoweringRecipe.Type.ID),
                 GemEmpoweringRecipe.Type.INSTANCE);
 
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(MCCourseMod.MOD_ID, "kaupen_furnace"),
+                KaupenFurnaceRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(MCCourseMod.MOD_ID, "kaupen_furnace"),
+                KaupenFurnaceRecipe.Type.INSTANCE);
+
     }
 }

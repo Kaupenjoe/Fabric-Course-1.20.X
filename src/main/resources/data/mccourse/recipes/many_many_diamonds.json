@@ -1,0 +1,11 @@
+{
+  "type": "mccourse:kaupen_furnace",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.1,
+  "group": "iron",
+  "ingredient": {
+    "item": "minecraft:coal"
+  },
+  "result": "minecraft:diamond"
+}

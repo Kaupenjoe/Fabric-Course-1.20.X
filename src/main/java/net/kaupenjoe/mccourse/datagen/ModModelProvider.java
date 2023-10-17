@@ -85,6 +85,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK_1);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK_2);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WAXED_RUBY_BLOCK_3);
+
+        blockStateModelGenerator.registerCooker(ModBlocks.KAUPEN_FURNACE, TexturedModel.ORIENTABLE);
     }
 
     @Override

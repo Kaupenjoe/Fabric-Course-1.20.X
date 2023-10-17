@@ -26,6 +26,10 @@ public class ModBlockEntities {
             FabricBlockEntityTypeBuilder.create(ModHangingSignBlockEntity::new,
                     ModBlocks.DRIFTWOOD_HANGING_SIGN, ModBlocks.DRIFTWOOD_HANGING_WALL_SIGN).build(null));
 
+    public static final BlockEntityType<KaupenFurnaceBlockEntity> KAUPEN_FURNACE_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MCCourseMod.MOD_ID, "kaupen_furnace_be"),
+                    FabricBlockEntityTypeBuilder.create(KaupenFurnaceBlockEntity::new,
+                            ModBlocks.KAUPEN_FURNACE).build(null));
 
     public static void registerBlockEntities() {
         MCCourseMod.LOGGER.info("Registering Block Entities for " + MCCourseMod.MOD_ID);

@@ -1,0 +1,10 @@
+{
+  "type": "mccourse:kaupen_furnace",
+  "category": "food",
+  "cookingtime": 50,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "mccourse:raw_pink_garnet"
+  },
+  "result": "mccourse:pink_garnet"
+}

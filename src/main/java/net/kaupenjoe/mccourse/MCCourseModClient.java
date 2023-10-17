@@ -25,6 +25,7 @@ import net.kaupenjoe.mccourse.networking.ModMessages;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.kaupenjoe.mccourse.particle.PinkGarnetParticle;
 import net.kaupenjoe.mccourse.screen.GemEmpoweringScreen;
+import net.kaupenjoe.mccourse.screen.KaupenFurnaceScreen;
 import net.kaupenjoe.mccourse.screen.ModScreenHandlers;
 import net.kaupenjoe.mccourse.util.ModModelPredicateProvider;
 import net.kaupenjoe.mccourse.util.ModWoodTypes;
@@ -64,6 +65,7 @@ public class MCCourseModClient implements ClientModInitializer {
         ModelLoadingRegistry.INSTANCE.registerModelProvider((manager, out) -> new ModelIdentifier(MCCourseMod.MOD_ID, "radiation_staff_3d", "inventory"));
 
         HandledScreens.register(ModScreenHandlers.GEM_EMPOWERING_SCREEN_HANDLER, GemEmpoweringScreen::new);
+        HandledScreens.register(ModScreenHandlers.KAUPEN_FURNACE_SCREEN_HANDLER, KaupenFurnaceScreen::new);
 
         ModMessages.registerS2CPackets();
 
